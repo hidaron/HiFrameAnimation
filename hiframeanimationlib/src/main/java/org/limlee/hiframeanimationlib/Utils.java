@@ -36,10 +36,12 @@ public class Utils {
             byte[] imageBytes = bufferedSource.readByteArray();
             BitmapFactory.Options options = new BitmapFactory.Options();
             options.inSampleSize = 1;
-            options.inJustDecodeBounds = true;
-            BitmapFactory.decodeByteArray(imageBytes, 0, imageBytes.length, options);
-            options.inJustDecodeBounds = false;
-            addInBitmapOptions(options);
+            if(isReusableBitmap) {
+                options.inJustDecodeBounds = true;
+                BitmapFactory.decodeByteArray(imageBytes, 0, imageBytes.length, options);
+                options.inJustDecodeBounds = false;
+                addInBitmapOptions(options);
+            }
             frameBitmap = BitmapFactory.decodeByteArray(imageBytes, 0, imageBytes.length, options);
             if (isReusableBitmap) {
                 reuseBitmap(frameBitmap);
