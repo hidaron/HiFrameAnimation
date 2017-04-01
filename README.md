@@ -3,7 +3,7 @@
 
 ![image](https://github.com/hidaron/HiFrameAnimation/blob/master/demo.gif) 
 
-##使用了inBitmap复用内存
+## 使用了inBitmap复用内存
 为了节省内存，我在每一帧绘制前才从本地读取并且编码图片，绘制完成后就释放，但这样的话会频繁地进行IO操作，造成内存抖动。为了减少内存抖动，我使用了inBitmap来复用当前帧所占用内存，效果还是很不错，内存抖动明显减缓了。
 
 没有使用inBitmap</br>
@@ -12,7 +12,7 @@
 使用inBitmap</br>
 ![image](https://github.com/hidaron/HiFrameAnimation/blob/master/inbitmap_after.png)
 
-##怎么使用
+## 怎么使用
 ### 1.添加帧动画视图布局
 
 ````
