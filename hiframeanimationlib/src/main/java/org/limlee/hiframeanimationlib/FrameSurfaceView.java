@@ -153,11 +153,6 @@ abstract class FrameSurfaceView extends SurfaceView {
             UpdateThread updateThread = mUpdateThread;
             mUpdateThread = null;
             updateThread.quit();
-            try {
-                updateThread.join(6);
-            } catch (InterruptedException e) {
-                e.printStackTrace();
-            }
             updateThread.interrupt();
         }
     }
