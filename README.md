@@ -70,4 +70,6 @@
 
 ````
 
+## 最后，还可以使用属性动画来实现负责的大礼物动画
 
+https://github.com/hidaron/CoreAnimator2Android
